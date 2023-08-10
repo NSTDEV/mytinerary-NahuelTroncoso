@@ -1,0 +1,15 @@
+#login {
+    background-color: #87CBB9;
+    border: 3px solid transparent;
+    transition: border-color 0.25s;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+#login:hover {
+    border: 3px solid #f9f9f9;
+    color: #f9f9f9;
+}

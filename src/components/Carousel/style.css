@@ -1,0 +1,122 @@
+#carrousel {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    padding-block: 2rem;
+    background-color: rgb(0, 0, 0, .3);
+}
+
+#carrousel-title {
+    font-size: 3rem;
+    min-width: 40%;
+    width: fit-content;
+    padding: .5rem;
+    margin-inline: auto;
+    background-image: linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    background-size: 0% 8px;
+    transition: background-size 300ms ease;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+
+#carrousel-title:hover {
+    background-size: 100% 8px;
+}
+
+#cards {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding: 1rem;
+    background-image: linear-gradient(180deg, rgba(135,203,185,0) 0%, rgba(0,65,133,0.4) 100%);
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 300px;
+    z-index: 2;
+    overflow-y: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    display: inline-block;
+    border: 3px transparent;
+    transition: .3s ease-in-out;
+    filter: brightness(50%);
+}
+
+.card-img:hover {
+    border: 3px solid #87CBB9;
+    filter: brightness(90%);
+    z-index: -1;
+}
+
+.card-city, .card-country {
+    transition: .3s ease;
+    bottom: 0%;
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    isolation: isolate;
+    background-color: rgb(0, 0, 0, .4);
+    display: flex;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.card-city {
+    bottom: -10%;
+    color: #87CBB9;
+    background-color: rgb(0, 0, 0, .6);
+    text-transform: none;
+}
+
+.card-container:hover > .card-city {
+    bottom: 15%;
+}
+
+#arrows {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    justify-content: space-between;
+    margin-inline: auto;
+    isolation: isolate;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(25%);
+}
+
+.carousel-button {
+    padding: 0 1rem;
+    margin-inline: 2%;
+    font-size: 2rem;
+    background-image: linear-gradient(180deg, rgba(135,203,185,1) 0%, rgba(0,65,133,0.4) 100%);
+    background-repeat: no-repeat;
+    border: 3px solid transparent;
+    color: #f9f9f9;
+    transition: 300ms ease;
+    cursor: pointer;
+}
+
+.carousel-button:hover {
+    transform: scale(1.1);
+    background-image: linear-gradient(180deg, rgba(135,203,185,1) 100%, rgba(0,65,133,0.4) 0%);
+    border: 3px solid #f9f9f9;
+}

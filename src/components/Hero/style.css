@@ -1,0 +1,106 @@
+#hero-container {
+    height: 700px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0, .2),
+        rgb(0, 0, 0, .8)),
+        url('../../../public/assets/HeroBackground.jpg');
+}
+
+#hero-info {
+    display: flex;
+    position: absolute;
+    margin-inline: 2%;
+    padding-inline: .5rem;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#hero-text {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+#hero-title {
+    font-size: 5rem;
+    text-align: left;
+    background-image: linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    background-size: 0% 8px;
+    transition: background-size 300ms ease;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#hero-title:hover {
+    background-size: 100% 8px;
+}
+
+#hero-subtitle {
+    font-size: 2rem;
+    text-align: left;
+    z-index: 1;
+}
+
+#call-to-action {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#hero-icon {
+    font-size: 10rem;
+    background: -webkit-linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    background-clip: text;
+    transition: .3s ease-in-out;
+    -webkit-text-fill-color: transparent;
+}
+
+#call-to-action:hover #hero-icon {
+    transform: scale(1.1);
+    transform: rotate(20deg);
+}
+
+#hero-button {
+    text-decoration: none;
+    position: relative;
+    border: 3px solid #f9f9f9;
+    padding: .5rem 4.5rem;
+    font-weight: bold !important;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: rgb(0, 0, 0, .3);
+    color: #f9f9f9;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-left: auto;
+    transition: .3s ease;
+    z-index: 1;
+    transition: border-color 0.25s;
+}
+
+#hero-button::before {
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#hero-button:hover::before {
+    background:  linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    width: 100%;
+}

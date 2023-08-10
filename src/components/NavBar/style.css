@@ -1,0 +1,46 @@
+header {
+    margin-inline: auto;
+    width: 100%;
+    padding-block: .5rem;
+    z-index: 2;
+    top: 0;
+    position: absolute;
+}
+
+#menu {
+    height: 4rem;
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+    margin-inline: 2%;
+    z-index: 10 !important;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-icon {
+    max-height: 3rem;
+    border-radius: 25px 5px 25px 25px;
+}
+
+.nav-button {
+    list-style: none;
+    text-decoration: none;
+    padding: .5rem .8rem;
+    margin-inline: .3rem;
+    border: none;
+    color: #f9f9f9;
+    transition: .3s ease;
+}
+
+.nav-button:hover {
+    color: #87CBB9;
+    transform: scale(1.1);
+}
+
+.fa {
+    background-color: transparent;
+}
