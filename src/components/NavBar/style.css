@@ -44,3 +44,31 @@ header {
 .fa {
     background-color: transparent;
 }
+
+/* Media Query */
+@media screen and (max-width: 500px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        background-color: #0b0b0b;
+        padding: 1rem;
+        position: absolute;
+        width: 100%;
+        top: 4rem;
+        left: 0;
+        z-index: 1;
+    }
+
+    .nav-button {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.8rem;
+    }
+
+    #nav-icon {
+        display: block;
+    }
+}

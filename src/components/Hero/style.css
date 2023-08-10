@@ -106,7 +106,7 @@
     width: 100%;
 }
 
-
+/* Media Query */
 @media screen and (max-width: 780px) {
     #hero-info {
         flex-direction: column;
