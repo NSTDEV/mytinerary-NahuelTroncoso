@@ -3,7 +3,7 @@ import { Link as Anchor } from 'react-router-dom'
 
 export default function Footer() {
 
-  //Anchor list
+  // Anchor list
   let socialMedia = [
     { to: "www.facebook.com", className: "nav-button", iconClassName: "fa-brands fa-facebook-f", target: "_blank", title: "" },
     { to: "www.instagram.com", className: "nav-button", iconClassName: "fa-brands fa-instagram", target: "_blank", title: "" },
@@ -23,13 +23,13 @@ export default function Footer() {
 
   return (
     <>
-      <footer id='footer-container'>
-        <section id='footer'>
+      <footer id='footer'>
+        <section id='footer-container'>
           <div className='sector'>
             <h4>Social</h4>
             <nav id='footer-links'>
-              {socialMedia.map(({ to, className, iconClassName, target, title }) =>
-                <Anchor key={title} to={to} className={className} target={target}>
+              {socialMedia.map(({ to, className, iconClassName, target, title }, index) =>
+                <Anchor key={index} to={to} className={className} target={target}>
                   <i className={iconClassName} /> {title}
                 </Anchor>)}
             </nav>
@@ -37,18 +37,17 @@ export default function Footer() {
 
           <div className='sector'>
             <h4>Contact</h4>
-            {contact.map(({ to, className, iconClassName, target, title }) =>
-              <Anchor key={title} to={to} className={className} target={target}>
+            {contact.map(({ to, className, iconClassName, target, title }, index) =>
+              <Anchor key={index} to={to} className={className} target={target}>
                 <i className={iconClassName} /> {title}
               </Anchor>)}
           </div>
 
           <div className='sector'>
             <h4>Menu</h4>
-            {navBar.map(({ to, className, title }) =>
-              <Anchor key={title} to={to} className={className}>{title}</Anchor>)}
+            {navBar.map(({ to, className, title }, index) =>
+              <Anchor key={index} to={to} className={className}>{title}</Anchor>)}
           </div>
-
         </section>
       </footer>
     </>

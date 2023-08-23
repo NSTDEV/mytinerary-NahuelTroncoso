@@ -1,7 +1,7 @@
 import './style.css'
 
-export default function index({ className, iconClassName, id, text }) {
+export default function index({ className, iconClassName, id, text, onClick }) {
   return (
-    <button className={className} id={id}>{<i className={iconClassName}></i>} {text}</button>
+    <button className={className} id={id} onClick={onClick}>{<i className={iconClassName}></i>} {text}</button>
   )
 }

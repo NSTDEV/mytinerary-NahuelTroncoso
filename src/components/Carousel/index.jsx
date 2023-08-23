@@ -6,15 +6,13 @@ export default function Carousel() {
 
   const [index, setIndex] = useState(0);
 
-  //Image Selector to render
   const selectNewImage = (currentIndex, offset) => {
     const newIndex = (currentIndex + offset + images.length) % images.length;
     setIndex(newIndex);
   };
 
-  //Use effect for autoplay>
   useEffect(() => {
-    const interval = setInterval(() => { next(); }, 5000);
+    const interval = setInterval(next, 5000);
 
     return () => {
       clearInterval(interval);
@@ -29,30 +27,20 @@ export default function Carousel() {
     selectNewImage(index, 4);
   };
 
-  //Images renderer
   const renderImages = () => {
-    const renderedImages = [];
-
-    for (let i = index; i < index + 4; i++) {
-      const imgIndex = i >= images.length ? i - images.length : i;
-
-      renderedImages.push(
-        <div key={imgIndex} className='card-container'>
-          <h3 className='card-city'>{images[imgIndex].cityName}</h3>
-          <img className='card-img' src={`./assets/Cities-imgs/${images[imgIndex].image}`}
-            alt={`${images[imgIndex].cityName}, ${images[imgIndex].countryName}`} />
-          <h4 className='card-country'>{images[imgIndex].countryName}</h4>
-        </div>
-      );
-    };
-
-    return renderedImages;
+    return images.slice(index, index + 4).map((image, imgIndex) => (
+      <div key={imgIndex} className='card-container'>
+        <h3 className='card-city'>{image.cityName}</h3>
+        <img className='card-img' src={`./assets/Cities-imgs/${image.image}`} alt={`${image.cityName}, ${image.countryName}`} />
+        <h4 className='card-country'>{image.countryName}</h4>
+      </div>
+    ));
   };
 
   return (
     <>
-      <section id='carrousel'>
-        <h2 id='carrousel-title'>Popular Mytineraries</h2>
+      <section id='carousel'>
+        <h2 id='carousel-title'>Popular Mytineraries</h2>
         <div id='cards'>
           {renderImages()}
         </div>

@@ -1,5 +1,5 @@
-import Hero from '../../Hero/index'
-import Carousel from '../../Carousel/index'
+import Hero from '../../components/Hero/index'
+import Carousel from '../../components/Carousel/index'
 
 export default function index() {
   return (

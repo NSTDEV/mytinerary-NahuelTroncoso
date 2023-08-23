@@ -1,4 +1,8 @@
 #hero-container {
+    background-image: linear-gradient(to bottom,
+            rgb(0, 0, 0, .2),
+            rgb(0, 0, 0, .8)),
+        url('../../../assets/HeroBackground.jpg');
     height: auto;
     min-height: 700px;
     width: 100%;
@@ -6,11 +10,6 @@
     display: flex;
     align-items: center;
     background-size: cover;
-    background-image: linear-gradient(
-        to bottom,
-        rgb(0, 0, 0, .2),
-        rgb(0, 0, 0, .8)),
-        url('../../../public/assets/HeroBackground.jpg');
 }
 
 #hero-info {
@@ -30,13 +29,13 @@
 }
 
 #hero-title {
-    font-size: 5rem;
-    text-align: left;
-    background-image: linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    background-image: linear-gradient(90deg, rgba(135, 203, 185, 1) 0%, rgba(0, 65, 133, 1) 100%);
     background-size: 0% 8px;
-    transition: background-size 300ms ease;
     background-position: left bottom;
     background-repeat: no-repeat;
+    transition: background-size 300ms ease;
+    font-size: clamp(3.3rem, 15vw, 5rem);
+    text-align: left;
     z-index: 1;
 }
 
@@ -45,7 +44,7 @@
 }
 
 #hero-subtitle {
-    font-size: 2rem;
+    font-size: clamp(1.7rem, 5vw, 2rem);
     text-align: left;
     z-index: 1;
 }
@@ -54,15 +53,17 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 2rem;
+    margin: 4%;
 }
 
 #hero-icon {
-    font-size: 10rem;
-    background: -webkit-linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(135, 203, 185, 1) 0%, rgba(0, 65, 133, 1) 100%);
     background-clip: text;
-    transition: .3s ease-in-out;
     -webkit-text-fill-color: transparent;
+    transition: .3s ease-in-out;
+    font-size: 10rem;
 }
 
 #call-to-action:hover #hero-icon {
@@ -71,6 +72,7 @@
 }
 
 #hero-button {
+    background-color: rgb(0, 0, 0, .3);
     text-decoration: none;
     position: relative;
     border: 3px solid #f9f9f9;
@@ -79,7 +81,6 @@
     font-size: 1.6rem;
     font-weight: 500;
     font-family: inherit;
-    background-color: rgb(0, 0, 0, .3);
     color: #f9f9f9;
     cursor: pointer;
     align-self: flex-end;
@@ -90,19 +91,19 @@
 }
 
 #hero-button::before {
+    background: linear-gradient(90deg, rgba(135, 203, 185, 1) 0%, rgba(0, 65, 133, 1) 100%);
     transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     content: '';
     width: 50%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
 }
 
-#hero-button:hover::before {
-    background:  linear-gradient(90deg, rgba(135,203,185,1) 0%, rgba(0,65,133,1) 100%);
+#call-to-action:hover #hero-button::before {
+    background: linear-gradient(90deg, rgba(135, 203, 185, 1) 0%, rgba(0, 65, 133, 1) 100%);
     width: 100%;
 }
 
@@ -110,33 +111,29 @@
 @media screen and (max-width: 780px) {
     #hero-info {
         flex-direction: column;
-        width: 90%;
+        margin-inline: auto;
     }
 
     #hero-text {
-        width: 100%;
+        width: 90%;
         margin-block: 2%;
-    }
-    
-    #hero-title {
-        font-size: 3.5rem;
-    }
-
-    #hero-subtitle {
-        font-size: 2rem;
     }
 
     #call-to-action {
-        margin-inline: auto;
+        margin: 2rem auto;
         flex-direction: row;
+        gap: 4rem;
+        justify-content: space-between;
     }
 
     #hero-icon {
-        font-size: 10rem;
+        font-size: 9rem;
     }
+
     #hero-button {
-        width: 50%;
-        margin: 0;
+        width: fit-content;
+        padding: 2rem 1rem;
+        margin: auto;
     }
 
 }
