@@ -1,6 +1,7 @@
 import './style.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAllCities } from '../../services/citiesQueries.js';
+import City from '../City/index';
 
 export default function Cities() {
   const [cities, setCities] = useState([]);
@@ -15,15 +16,11 @@ export default function Cities() {
     <div>
       <main className="container">
         <h1 className='title'>Cities</h1>
+        <input id="search-bar" type="search" />
 
-        <ul>
+        <ul className='cards'>
           {cities.map(city => (
-            <li key={city._id}>
-              <h2>{city.name}</h2>
-              <img src={city.image} alt={city.name} />
-              <h3>{city.country}</h3>
-              <p>{city.description}</p>
-            </li>
+            <City key={city._id} city={city} />
           ))}
         </ul>
 

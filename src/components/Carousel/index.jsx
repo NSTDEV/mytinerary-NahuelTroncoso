@@ -41,7 +41,7 @@ export default function Carousel() {
     <>
       <section id='carousel'>
         <h2 id='carousel-title'>Popular Mytineraries</h2>
-        <div id='cards'>
+        <div className='cards'>
           {renderImages()}
         </div>
 
