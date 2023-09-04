@@ -3,7 +3,6 @@ import { Link as Anchor } from 'react-router-dom'
 
 export default function Footer() {
 
-  // Anchor list
   let socialMedia = [
     { to: "www.facebook.com", className: "nav-button", iconClassName: "fa-brands fa-facebook-f", target: "_blank", title: "" },
     { to: "www.instagram.com", className: "nav-button", iconClassName: "fa-brands fa-instagram", target: "_blank", title: "" },
@@ -25,29 +24,33 @@ export default function Footer() {
     <>
       <footer id='footer'>
         <section id='footer-container'>
-          <div className='sector'>
-            <h4>Social</h4>
-            <nav id='footer-links'>
-              {socialMedia.map(({ to, className, iconClassName, target, title }, index) =>
-                <Anchor key={index} to={to} className={className} target={target}>
-                  <i className={iconClassName} /> {title}
-                </Anchor>)}
-            </nav>
-          </div>
 
-          <div className='sector'>
-            <h4>Contact</h4>
-            {contact.map(({ to, className, iconClassName, target, title }, index) =>
-              <Anchor key={index} to={to} className={className} target={target}>
-                <i className={iconClassName} /> {title}
-              </Anchor>)}
-          </div>
-
-          <div className='sector'>
+          <div className='footer-sector'>
             <h4>Menu</h4>
             {navBar.map(({ to, className, title }, index) =>
               <Anchor key={index} to={to} className={className}>{title}</Anchor>)}
           </div>
+
+          <div className='links-container'>
+            <div className='footer-sector'>
+              <h4>Social Media</h4>
+              <nav id='footer-links'>
+                {socialMedia.map(({ to, className, iconClassName, target, title }, index) =>
+                  <Anchor key={index} to={to} className={className} target={target}>
+                    <i className={iconClassName} /> {title}
+                  </Anchor>)}
+              </nav>
+            </div>
+
+            <div className='footer-sector'>
+              <h4>Contact us!</h4>
+              {contact.map(({ to, className, iconClassName, target, title }, index) =>
+                <Anchor key={index} to={to} className={className} target={target}>
+                  <i className={iconClassName} /> {title}
+                </Anchor>)}
+            </div>
+          </div>
+
         </section>
       </footer>
     </>

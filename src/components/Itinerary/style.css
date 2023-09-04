@@ -1,0 +1,39 @@
+.itinerary-container {
+    width: 80%;
+    height: fit-content;
+    padding: 1rem;
+    margin-block: 1rem;
+    margin-inline: 2rem;
+    background-color: aquamarine;
+    position: relative;
+    isolation: isolate;
+}
+
+.itinerary-user {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.itinerary-price {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.itinerary-info {
+    display: flex;
+    width: 90%;
+    margin-inline: auto;
+    margin-block: 1rem;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.itinerary-button {
+    font-size: 1.5rem;
+    padding: .5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

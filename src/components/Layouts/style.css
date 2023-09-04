@@ -1,0 +1,14 @@
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: rgb(0, 59, 65);
+    background-repeat: repeat;
+}
+
+main {
+    margin-inline: auto;
+    margin-block: auto;
+    color: #f9f9f9;
+    width: 100%;
+}

@@ -1,6 +1,6 @@
 import './style.css'
 import Button from '../Button/index'
-import { Link as Anchor } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useRef } from 'react';
 
 export default function NavBar() {
@@ -19,14 +19,14 @@ export default function NavBar() {
   return (
     <>
       <header>
-        <div id='menu'>
-          <img id='nav-logo' src="./assets/MyTineraryIcon.png" alt="MyTinerary Logo" />
+        <div id='nav-container'>
+          <img id='nav-logo' src="../public/assets/MyTineraryIcon.png" alt="MyTinerary Logo" />
 
           <nav id="nav-list" ref={navRef}>
             {data.map(({ to, title, className, iconClassName }) =>
-              <Anchor key={title} to={to} className={className}>
+              <Link key={title} to={to} className={className}>
                 <i className={iconClassName} /> {title}
-              </Anchor>)}
+              </Link>)}
 
             <Button className={'nav-button'} iconClassName={'fa fa-user'} id={'login'} text={'Login'} />
 
@@ -37,5 +37,5 @@ export default function NavBar() {
         </div>
       </header>
     </>
-  )
-}
+  );
+};

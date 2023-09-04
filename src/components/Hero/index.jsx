@@ -13,10 +13,10 @@ export default function Hero() {
 
                     <div id='call-to-action'>
                         <i className="fa-solid fa-suitcase-rolling" id='hero-icon'></i>
-                        <Anchor to={'/cities'} className={'animation'} id={'hero-button'}>Find More</Anchor>
+                        <Anchor to={'/cities'} className={'animation'} id={'hero-button'}>Explore!</Anchor>
                     </div>
                 </div>
             </section>
         </>
-    )
-}
+    );
+};

@@ -1,19 +1,25 @@
 import './style.css';
+import { Link } from 'react-router-dom';
 
-const Card = (props) => {
-    const { city } = props;
-    const { name, country, image, language, description, currency } = city;
-
+const Card = ({ data }) => {
     return (
-        <article key={imgIndex} className='card-container'>
-            <h3 className='card-city'>{name}</h3>
-            <img className='card-img' src={`${image}`} alt={`${name}, ${country}`} />
-            <h4 className='card-country'>{country}</h4>
-            <h4 className='card-country'>{description}</h4>
-            <h4 className='card-country'>{language}</h4>
-            <h4 className='card-country'>{currency}</h4>
-        </article>
-    )
+        <>
+            <article className='card-container'>
+                <div className='card'>
+                    <img className='card-img' src={data.image} alt={data.name} />
+                    <h2>{data.name}</h2>
+
+                    <div className='content'>
+                        <p>{data.description}</p>
+
+                        <Link className='card-redirect' to={`/city/${data._id}`}>
+                            See more!
+                        </Link>
+                    </div>
+                </div>
+            </article>
+        </>
+    );
 };
 
 export default Card;

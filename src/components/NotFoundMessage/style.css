@@ -1,0 +1,19 @@
+.message-container {
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s;
+    text-align: center;
+    justify-content: center;
+    margin-top: -1rem;
+}
+
+.message-container h2 {
+    padding: 0 1rem;
+    background-color: #87CBB9;
+}
+
+.message-container i {
+    padding: 1rem;
+    font-size: 6rem;
+}

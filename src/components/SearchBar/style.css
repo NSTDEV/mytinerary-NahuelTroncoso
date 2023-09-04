@@ -1,0 +1,13 @@
+#search-bar {
+    background-color: #87CBB9;
+    color: #f9f9f9;
+    font-size: 2rem;
+    width: 40%;
+    margin-block: 4rem;
+    padding-block: 2rem;
+    height: 3rem;
+    position: relative;
+    margin-inline: auto;
+    border: 3px transparent;
+    border-radius: 3px;
+}
