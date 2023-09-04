@@ -35,33 +35,30 @@ const CityDetails = () => {
 
   return (
     <section className='city-details-container' style={backgroundStyle}>
-      <div>
+      <div className='city-details'>
         <h2 id='city-details-title'>{cityDetails.name}</h2>
         <h3 className='city-details country'>Country: {cityDetails.country}
           <i className="fa-solid fa-location-dot"></i>
         </h3>
         <h3 className='city-details description'>{cityDetails.description}</h3>
-      </div>
-      <i className="fa-solid fa-star"></i>
+        <i className="fa-solid fa-star"></i>
 
-      <div>
-        <h3 className='city-details country'>City language: {cityDetails.language}</h3>
-        <h3 className='city-details currency'>{cityDetails.currency}</h3>
-      </div>
-
-      {itineraries.length > 0 ? (
         <div>
-          <h3>Itineraries:</h3>
-          <ul>
-            {itineraries.map((itinerary) => (
-              <li key={itinerary._id}>
-                <Itinerary itinerary={itinerary} />
-              </li>
-            ))}
-          </ul>
+          <h3 className='city-details country'>City language: {cityDetails.language}</h3>
+          <h3 className='city-details currency'>{cityDetails.currency}</h3>
+        </div>
+
+      </div>
+      
+      {itineraries.length > 0 ? (
+        <div className='itineraries-section'>
+          <h3 className='itinerary-title'>Itineraries:</h3>
+          {itineraries.map((itinerary) => (
+            <Itinerary key={itinerary._id} data={itinerary} />
+          ))}
         </div>
       ) : (
-        <div>
+        <div id='no-itinerary-message'>
           <p>This city has no itineraries yet.</p>
         </div>
       )}

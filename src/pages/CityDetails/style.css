@@ -5,8 +5,9 @@
     align-items: center;
     justify-content: space-evenly;
     min-height: 100vh;
+    height: fit-content;
     width: 100%;
-    color: aliceblue;
+    color: #f9f9f9;
     animation: fadeIn 1.2s;
 }
 
@@ -15,6 +16,8 @@
 }
 
 .city-details {
+    position: relative;
+    margin-block: 3rem 1rem;
     font-size: 2rem;
     height: 100%;
 }
@@ -25,15 +28,42 @@
     margin-bottom: 1rem;
     margin-left: 1rem;
     padding: 0 .5rem;
-    background-color: aquamarine;
+    background-color: #87CBB9;
     cursor: pointer;
-    color: aliceblue;
+    transition: 300ms;
+    color: #f9f9f9;
+}
+
+.back-button:hover {
+    scale: 1.1;
+}
+
+.itineraries-section {
+    margin-block: 2rem;
+    position: relative;
+    justify-content: center;
+    margin-inline: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.itinerary-title {
+    font-size: 2rem;
+    color: #87CBB9;
+    margin-block: auto 0;
+}
+
+#no-itinerary-message {
+    margin-block: auto;
+    font-size: 1.5rem;
+    color: #87CBB9;
 }
 
 #go-back-button {
     cursor: pointer;
     background-color: transparent;
-    color: aliceblue;
+    color: #f9f9f9;
     border: none;
     position: relative;
     padding: .5rem;

@@ -40,7 +40,7 @@ export default function Cities() {
   };
 
   const displayedCities = noResults ? [] : (filteredCities.length > 0 ? filteredCities : cities);
-
+  console.log(displayedCities)
   return (
     <div>
       <main className="cities-container">
@@ -48,8 +48,8 @@ export default function Cities() {
         <SearchBar onSearch={handleSearch} />
 
         <section className='cards-container'>
-          {displayedCities.slice(0, visibleCities).map(data => (
-            <Card key={data._id} data={data} />
+          {displayedCities.slice(0, visibleCities).map(city => (
+            <Card key={city._id} data={city} />
           ))}
           {noResults && <NotFound />}
         </section>
