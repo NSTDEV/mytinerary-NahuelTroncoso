@@ -1,15 +1,25 @@
-#login {
+button {
     background-color: #87CBB9;
-    border: 3px solid transparent;
-    transition: border-color 0.25s;
-    padding: .5rem 1rem;
+    color: #f9f9f9;
     font-size: 1rem;
-    font-family: inherit;
+    border: 3px solid transparent;
     cursor: pointer;
-    transition: .3s ease;
+    font-family: inherit;
 }
 
-#login:hover {
-    border: 3px solid #f9f9f9;
+.gradient-button {
+    cursor: pointer;
+    padding: 0 2rem;
+    font-size: 2rem;
+    z-index: 1;
+    transition: 300ms;
     color: #f9f9f9;
+    background-image: linear-gradient(180deg, rgba(135, 203, 185, 1) 0%, rgba(0, 65, 133, 0.4) 100%);
+    background-repeat: no-repeat;
+}
+
+.gradient-button:hover {
+    background-image: linear-gradient(180deg, rgba(135, 203, 185, 1) 100%, rgba(0, 65, 133, 0.4) 0%);
+    transform: scale(1.1);
+    border: 3px solid #f9f9f9;
 }

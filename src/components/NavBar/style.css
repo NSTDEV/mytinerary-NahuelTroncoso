@@ -1,10 +1,10 @@
-header {
+.header-container {
     margin-inline: auto;
     width: 100%;
     padding-block: .5rem;
     z-index: 2;
     top: 0;
-    position: absolute;
+    position: fixed;
 }
 
 #nav-container {
@@ -16,12 +16,15 @@ header {
 }
 
 #nav-list {
+    padding: .5rem;
     display: flex;
+    height: inherit;
+    background-color: rgb(0, 0, 0, .7);
 }
 
 #nav-logo {
-    max-height: 3rem;
-    border-radius: 25px 5px 25px 25px;
+    max-height: 4rem;
+    padding: .5rem;
 }
 
 .nav-button,
@@ -33,6 +36,17 @@ header {
     border: none;
     color: #f9f9f9;
     transition: .3s ease;
+}
+
+#login {
+    transition: .3s ease;
+    padding: .5rem 1rem;
+    border: 3px solid transparent;
+}
+
+#login:hover {
+    color: #f9f9f9;
+    border: 3px solid #f9f9f9;
 }
 
 .toggle-button {

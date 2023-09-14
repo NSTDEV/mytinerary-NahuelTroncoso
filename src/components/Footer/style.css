@@ -12,7 +12,8 @@
 
 #footer-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     align-items: center;
     margin-inline: auto;
     width: 80%;
@@ -20,7 +21,6 @@
 
 .links-container {
     display: flex;
-    justify-content: right;
     align-items: center;
 }
 

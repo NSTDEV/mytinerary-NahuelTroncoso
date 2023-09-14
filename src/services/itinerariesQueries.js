@@ -1,12 +1,8 @@
-import axios from 'axios';
-
-const itinerariesURL = axios.create({
-    baseURL: 'http://localhost:4000',
-});
+import axiosInstance from './axiosConfig';
 
 export const getAllItineraries = async () => {
     try {
-        const response = await itinerariesURL.get("/api/itineraries");
+        const response = await axiosInstance.get("/itineraries");
         return response.data;
     } catch (error) {
         console.log(error);
@@ -16,7 +12,7 @@ export const getAllItineraries = async () => {
 
 export const getItinerariesByCity = async (cityId) => {
     try {
-        const response = await itinerariesURL.get(`/api/itineraries/city/${cityId}`);
+        const response = await axiosInstance.get(`/itineraries/city/${cityId}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -26,7 +22,7 @@ export const getItinerariesByCity = async (cityId) => {
 
 export const getItinerary = async (id) => {
     try {
-        const response = await itinerariesURL.get(`/api/itineraries/${id}`);
+        const response = await axiosInstance.get(`/itineraries/${id}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -36,7 +32,7 @@ export const getItinerary = async (id) => {
 
 export const createItinerary = async (itineraryData) => {
     try {
-        const response = await itinerariesURL.post("/api/itineraries", itineraryData);
+        const response = await axiosInstance.post("/itineraries", itineraryData);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -46,7 +42,7 @@ export const createItinerary = async (itineraryData) => {
 
 export const updateItinerary = async (id, updatedData) => {
     try {
-        const response = await itinerariesURL.put(`/api/itineraries/${id}`, updatedData);
+        const response = await axiosInstance.put(`/itineraries/${id}`, updatedData);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -56,7 +52,7 @@ export const updateItinerary = async (id, updatedData) => {
 
 export const deleteItinerary = async (id) => {
     try {
-        const response = await itinerariesURL.delete(`/api/itineraries/${id}`);
+        const response = await axiosInstance.delete(`/itineraries/${id}`);
         return response.data;
     } catch (error) {
         console.log(error);

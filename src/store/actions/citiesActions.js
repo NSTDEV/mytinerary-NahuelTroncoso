@@ -3,7 +3,8 @@ import { getAllCities, getCity, addCity, addCities, updateCity, updateAllCities,
 
 export const loadCities = createAsyncThunk('load_cities', async () => {
     try {
-        return await getAllCities();
+        const cities = await getAllCities();
+        return cities;
     } catch (error) {
         console.log(error);
         throw error;
@@ -79,5 +80,10 @@ export const filterCities = createAction('filter_cities', (filteredCities, noRes
         noResults,
     },
 }));
+
+export const setSearchTerm = (searchTerm) => ({
+    type: 'SET_SEARCH_TERM',
+    payload: searchTerm,
+});
 
 export const increaseVisibleCities = createAction('increase_visible_cities');

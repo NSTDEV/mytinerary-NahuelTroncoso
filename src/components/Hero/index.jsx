@@ -1,5 +1,5 @@
 import './style.css'
-import { Link as Anchor } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
     return (
@@ -13,7 +13,7 @@ export default function Hero() {
 
                     <div id='call-to-action'>
                         <i className="fa-solid fa-suitcase-rolling" id='hero-icon'></i>
-                        <Anchor to={'/cities'} className={'animation'} id={'hero-button'}>Explore!</Anchor>
+                        <Link to={'/cities'} className={'animation'} id={'hero-button'}>Explore!</Link>
                     </div>
                 </div>
             </section>

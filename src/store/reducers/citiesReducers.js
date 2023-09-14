@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { loadCities, loadCityDetails, addNewCity, addMultipleCities, updateCityById, updateAllCitiesData, deleteCityById, deleteAllCitiesData, increaseVisibleCities, filterCities } from '../actions/citiesActions';
+import { loadCities, loadCityDetails, addNewCity, addMultipleCities, updateCityById, deleteCityById, increaseVisibleCities, filterCities } from '../actions/citiesActions';
 
 const initialState = {
     cities: [],
@@ -43,12 +43,6 @@ const citiesReducer = createReducer(initialState, (builder) =>
                 state.cities[updatedCityIndex] = action.payload;
             }
         })
-        .addCase(updateAllCitiesData.fulfilled, (state, action) => {
-            state.cities = state.cities.map((city) => ({
-                ...city,
-                ...action.payload
-            }));
-        })
         .addCase(deleteCityById.fulfilled, (state, action) => {
             return {
                 ...state,
@@ -56,9 +50,6 @@ const citiesReducer = createReducer(initialState, (builder) =>
                     (city) => city._id !== action.payload._id
                 )
             };
-        })
-        .addCase(deleteAllCitiesData.fulfilled, (state) => {
-            state.cities = [];
         })
         .addCase(increaseVisibleCities, (state) => {
             return {

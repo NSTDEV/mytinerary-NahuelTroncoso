@@ -87,7 +87,8 @@
         transition-delay: 200ms;
     }
 
-    .card:hover>.card-img, .card-redirect:hover {
+    .card:hover>.card-img,
+    .card-redirect:hover {
         scale: 1.1;
     }
 }
@@ -108,5 +109,13 @@
     .content {
         transform: translateY(0%);
         opacity: 1;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .card {
+        width: 280px;
+        height: 250px;
     }
 }

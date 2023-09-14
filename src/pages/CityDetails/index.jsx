@@ -1,17 +1,16 @@
 import './style.css';
-import React, { useEffect } from 'react';
 import Button from '../../components/Button/index';
 import Itinerary from '../../components/Itinerary';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadCityDetails } from '../../store/actions/citiesActions';
+import { loadCityDetails, filterCities } from '../../store/actions/citiesActions';
 import { loadItinerariesByCity } from '../../store/actions/itinerariesActions';
 
 const CityDetails = () => {
   const dispatch = useDispatch();
-  const cityDetails = useSelector((state) => state.citiesReducer.cityDetails);
-  const itineraries = useSelector((state) => state.itinerariesReducer.itineraries);
+  const cityDetails = useSelector((state) => state.cities.cityDetails);
+  const itineraries = useSelector((state) => state.itineraries.itineraries);
   const { id } = useParams();
 
   useEffect(() => {
@@ -33,29 +32,40 @@ const CityDetails = () => {
     backgroundPosition: 'center center',
   };
 
+  const handleGoBack = () => {
+    dispatch(loadCityDetails(""));
+    dispatch(filterCities([], false));
+  };
+
   return (
     <section className='city-details-container' style={backgroundStyle}>
       <div className='city-details'>
         <h2 id='city-details-title'>{cityDetails.name}</h2>
-        <h3 className='city-details country'>Country: {cityDetails.country}
+
+        <div className='country'>
+          <h4 className='city-details'>Country: {cityDetails.country}</h4>
           <i className="fa-solid fa-location-dot"></i>
-        </h3>
-        <h3 className='city-details description'>{cityDetails.description}</h3>
-        <i className="fa-solid fa-star"></i>
+        </div>
+
+        <div className='description'>
+          <h4 className='city-details'>{cityDetails.description}</h4>
+          <i className="fa-solid fa-star"></i>
+        </div>
 
         <div>
-          <h3 className='city-details country'>City language: {cityDetails.language}</h3>
-          <h3 className='city-details currency'>{cityDetails.currency}</h3>
+          <h4 className='city-details country'>City language: {cityDetails.language}</h4>
+          <h4 className='city-details currency'>{cityDetails.currency}</h4>
         </div>
 
       </div>
-      
+
       {itineraries.length > 0 ? (
         <div className='itineraries-section'>
           <h3 className='itinerary-title'>Itineraries:</h3>
           {itineraries.map((itinerary) => (
             <Itinerary key={itinerary._id} data={itinerary} />
           ))}
+
         </div>
       ) : (
         <div id='no-itinerary-message'>
@@ -63,10 +73,10 @@ const CityDetails = () => {
         </div>
       )}
 
-      <Link to="../../cities" className="back-button">
-        <i className="fa-solid fa-left-long"></i>
-        <Button id={"go-back-button"} text={'Go back'} />
+      <Link to="../../cities">
+        <Button className="back-button gradient-button" iconClassName={"fa-solid fa-arrow-left"} onClick={handleGoBack} />
       </Link>
+
     </section>
   );
 };

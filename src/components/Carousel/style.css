@@ -24,69 +24,12 @@
 .carousel-cards {
     background-image: linear-gradient(180deg, rgba(135, 203, 185, 0) 0%, rgba(0, 65, 133, 0.4) 100%);
     height: 100%;
-    width: 85%;
     display: flex;
-    margin-inline: auto;
+    margin-inline: 2.5%;
     margin-bottom: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1rem;
-}
-
-.carousel-card-container {
-    position: relative;
-    display: flex;
-    margin: 1%;
-    flex-direction: column;
-    width: 45%;
-    height: 300px;
-    overflow-y: hidden;
-}
-
-.carousel-card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    display: inline-block;
-    border: 3px transparent;
-    transition: .3s ease-in-out;
-    filter: brightness(50%);
-}
-
-.carousel-card-img:hover {
-    border: 3px solid #87CBB9;
-    filter: brightness(90%);
-    z-index: 0;
-}
-
-.carousel-card-city,
-.carousel-card-country {
-    background-color: rgb(0, 0, 0, .4);
-    transition: .3s ease;
-    bottom: 0%;
-    width: 100%;
-    height: 15%;
-    position: absolute;
-    isolation: isolate;
-    display: flex;
-    z-index: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-}
-
-.carousel-card-city {
-    background-color: rgb(0, 0, 0, .6);
-    bottom: -10%;
-    color: #87CBB9;
-    text-transform: none;
-}
-
-.carousel-card-container:hover>.carousel-card-city {
-    z-index: 1;
-    bottom: 15%;
+    padding-block: 1rem;
 }
 
 #arrows {
@@ -96,34 +39,4 @@
     gap: 2rem;
     justify-content: center;
     margin-inline: auto;
-    isolation: isolate;
-}
-
-.carousel-button {
-    background-image: linear-gradient(180deg, rgba(135, 203, 185, 1) 0%, rgba(0, 65, 133, 0.4) 100%);
-    background-repeat: no-repeat;
-    padding: 0 2rem;
-    font-size: 2rem;
-    border: 3px solid transparent;
-    color: #f9f9f9;
-    transition: 300ms ease;
-    cursor: pointer;
-}
-
-.carousel-button:hover {
-    background-image: linear-gradient(180deg, rgba(135, 203, 185, 1) 100%, rgba(0, 65, 133, 0.4) 0%);
-    transform: scale(1.1);
-    border: 3px solid #f9f9f9;
-}
-
-/* Media Query */
-@media screen and (max-width: 780px) {
-    .carousel-card-container {
-        width: 45%;
-        height: 30vh;
-    }
-
-    .carousel-cards {
-        width: 100%;
-    }
 }

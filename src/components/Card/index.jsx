@@ -10,10 +10,10 @@ const Card = ({ data }) => {
                     <h2>{data.name}</h2>
 
                     <div className='content'>
-                        <p>{data.description}</p>
+                        <p>{data.country}</p>
 
                         <Link className='card-redirect' to={`/city/${data._id}`}>
-                            See more!
+                            More Info
                         </Link>
                     </div>
                 </div>

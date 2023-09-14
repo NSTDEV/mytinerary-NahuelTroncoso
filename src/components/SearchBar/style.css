@@ -2,8 +2,9 @@
     background-color: #87CBB9;
     color: #f9f9f9;
     font-size: 2rem;
+    min-width: 18rem;
     width: 40%;
-    margin-block: 4rem;
+    margin-block: 2rem;
     padding-block: 2rem;
     height: 3rem;
     position: relative;

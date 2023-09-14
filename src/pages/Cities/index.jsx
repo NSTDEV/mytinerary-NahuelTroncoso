@@ -1,16 +1,17 @@
 import './style.css';
-import React, { useEffect } from 'react';
 import Card from '../../components/Card/index';
+import Button from '../../components/Button/index'
 import SearchBar from '../../components/SearchBar/index';
+import NotFound from '../../components/NotFoundMessage';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadCities, increaseVisibleCities, filterCities } from '../../store/actions/citiesActions.js';
-import NotFound from '../../components/NotFoundMessage';
 
 export default function Cities() {
   const dispatch = useDispatch();
-  const cities = useSelector((state) => state.citiesReducer.cities);
-  const visibleCities = useSelector((state) => state.citiesReducer.visibleCities);
-  const { filteredCities, noResults } = useSelector((state) => state.citiesReducer);
+  const cities = useSelector((state) => state.cities.cities);
+  const visibleCities = useSelector((state) => state.cities.visibleCities);
+  const { filteredCities, noResults } = useSelector((state) => state.cities);
 
   useEffect(() => {
     if (cities.length === 0) {
@@ -32,7 +33,7 @@ export default function Cities() {
       } else {
         dispatch(filterCities(filtered, false));
       }
-    }
+    };
   };
 
   const loadMoreCities = () => {
@@ -40,7 +41,6 @@ export default function Cities() {
   };
 
   const displayedCities = noResults ? [] : (filteredCities.length > 0 ? filteredCities : cities);
-  console.log(displayedCities)
   return (
     <div>
       <main className="cities-container">
@@ -55,7 +55,7 @@ export default function Cities() {
         </section>
 
         {visibleCities < displayedCities.length && (
-          <button className='load-more-button' onClick={loadMoreCities}><i className="fa-solid fa-arrow-down"></i>More cities!</button>
+          <Button className='load-more-button gradient-button' onClick={loadMoreCities} iconClassName="fa-solid fa-arrow-down" text="More cities!" />
         )}
 
       </main>

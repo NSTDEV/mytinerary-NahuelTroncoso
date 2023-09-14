@@ -1,13 +1,15 @@
 import './style.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 function SearchBar({ onSearch }) {
   const [searchValue, setSearchValue] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = event => {
     const value = event.target.value;
     setSearchValue(value);
-    onSearch(value);
+    dispatch(onSearch(value));
   };
 
   return (

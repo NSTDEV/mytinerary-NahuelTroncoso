@@ -1,12 +1,8 @@
-import axios from 'axios';
-
-const citiesURL = axios.create({
-    baseURL: 'http://localhost:4000'
-});
+import axiosInstance from './axiosConfig';
 
 export const getAllCities = async () => {
     try {
-        const response = await citiesURL.get("/api/cities");
+        const response = await axiosInstance.get("/cities");
         return response.data;
     } catch (error) {
         console.log(error);
@@ -15,7 +11,7 @@ export const getAllCities = async () => {
 
 export const getCity = async (id) => {
     try {
-        const response = await citiesURL.get(`/api/cities/${id}`);
+        const response = await axiosInstance.get(`/cities/${id}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -25,7 +21,7 @@ export const getCity = async (id) => {
 
 export const addCity = async (cityData) => {
     try {
-        const response = await citiesURL.post("/api/cities", cityData);
+        const response = await axiosInstance.post("/cities", cityData);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -34,7 +30,7 @@ export const addCity = async (cityData) => {
 
 export const addCities = async (citiesData) => {
     try {
-        const response = await citiesURL.post("/api/cities/batch", citiesData);
+        const response = await axiosInstance.post("/cities/batch", citiesData);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -43,7 +39,7 @@ export const addCities = async (citiesData) => {
 
 export const updateCity = async (id, updatedData) => {
     try {
-        const response = await citiesURL.put(`/api/city/${id}`, updatedData);
+        const response = await axiosInstance.put(`/city/${id}`, updatedData);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -52,7 +48,7 @@ export const updateCity = async (id, updatedData) => {
 
 export const updateAllCities = async (updatedData) => {
     try {
-        const response = await citiesURL.put("/api/cities", updatedData);
+        const response = await axiosInstance.put("/cities", updatedData);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -61,7 +57,7 @@ export const updateAllCities = async (updatedData) => {
 
 export const deleteCity = async (id) => {
     try {
-        const response = await citiesURL.delete(`/api/city/${id}`);
+        const response = await axiosInstance.delete(`/city/${id}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -70,7 +66,7 @@ export const deleteCity = async (id) => {
 
 export const deleteAllCities = async () => {
     try {
-        const response = await citiesURL.delete("/api/cities");
+        const response = await axiosInstance.delete("/cities");
         return response.data;
     } catch (error) {
         console.log(error);
