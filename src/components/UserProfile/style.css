@@ -12,10 +12,17 @@
     margin-top: auto;
     height: auto;
     overflow: visible;
+}
+
+.user-profile:hover> .user-info {
     width: auto;
 }
 
 .user-info {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    align-items: center;
     position: relative;
 }
 
