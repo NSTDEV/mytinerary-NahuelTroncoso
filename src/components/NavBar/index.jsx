@@ -49,7 +49,7 @@ export default function NavBar() {
               </Link>)}
 
             {isLoggedIn ?
-              (<UserProfile userData={userData} toggleLoginForm={toggleLoginForm} />) :
+              (<UserProfile userData={userData} />) :
               (<Button className={'nav-button'} iconClassName={'fa fa-user'} id={'login'} text={'Login'} onClick={toggleLoginForm} />)
             }
 

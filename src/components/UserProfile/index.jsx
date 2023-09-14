@@ -11,15 +11,21 @@ function UserProfile({ userData, toggleLoginForm }) {
     };
 
     return (
-        <div className="user-profile">
+        <section className="user-profile">
             <img className='user-avatar' src={userData?.picture || './public/assets/user-avatar.png'} alt="User Profile" onClick={toggleLoginForm} />
-            <p>{userData?.name}</p>
-            <p>{userData?.email}</p>
-            <p>{userData?.country}</p>
-            <p>{userData?.roll}</p>
-            <Button text={"Edit profile"} />
-            <Button onClick={handleLogout} text={"Logout"} />
-        </div>
+
+            <div className='user-info'>
+                <p>{userData?.name}</p>
+                <p>{userData?.email}</p>
+                <p>{userData?.country}</p>
+                <p>{userData?.roll}</p>
+            </div>
+
+            <div className='user-buttons'>
+                <Button text={"Edit profile"} />
+                <Button onClick={handleLogout} text={"Logout"} />
+            </div>
+        </section>
     );
 };
 

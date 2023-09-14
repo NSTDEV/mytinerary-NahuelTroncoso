@@ -1,8 +1,32 @@
-.user-avatar {
-    max-width: 4rem;
+.user-profile {
+    position: relative;
+    color: #f9f9f9;
+    overflow: hidden;
+    height: 3rem;
+    width: 4rem;
+    margin-inline: 1rem;
+    cursor: pointer;
 }
 
-.user-profile {
-    margin-top: 6.8rem;
-    color: #f9f9f9;
+.user-profile:hover {
+    margin-top: auto;
+    height: auto;
+    overflow: visible;
+    width: auto;
+}
+
+.user-info {
+    position: relative;
+}
+
+.user-avatar {
+    max-width: 3rem;
+    border-radius: 100%;
+    border: 2px solid aquamarine;
+}
+
+.user-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
