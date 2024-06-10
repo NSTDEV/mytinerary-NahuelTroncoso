@@ -15,7 +15,7 @@
 #hero-info {
     display: flex;
     position: absolute;
-    margin-inline: 2%;
+    margin-inline: 2.5%;
     padding-inline: .5rem;
     justify-content: space-between;
     align-content: center;
